@@ -1,3 +1,4 @@
+import { ClockDomainModule } from '@modules/clock/clock.domain.module';
 import { HelloDomainModule } from '@modules/hello/hello.domain.module';
 import { HelloHttpService } from '@modules/hello/services/hello.http.service';
 import { Module } from '@nestjs/common';
@@ -6,6 +7,6 @@ import { Module } from '@nestjs/common';
     controllers: [],
     providers: [HelloHttpService],
     exports: [HelloHttpService],
-    imports: [HelloDomainModule],
+    imports: [HelloDomainModule, ClockDomainModule],
 })
 export class HelloHttpModule {}

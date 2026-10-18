@@ -1,4 +1,5 @@
 import { HelperDateService } from '@common/helper/services/helper.date.service';
+import { ClockUtil } from '@modules/clock/clock.util';
 import type { IResponseReturn } from '@common/response/interfaces/response.interface';
 import type { HelloResponseDto } from '@modules/hello/dtos/response/hello.response.dto';
 import { HelloUtil } from '@modules/hello/utils/hello.util';
@@ -8,7 +9,8 @@ import { Injectable } from '@nestjs/common';
 export class HelloHttpService {
     constructor(
         private readonly helloUtil: HelloUtil,
-        private readonly helperDateService: HelperDateService
+        private readonly helperDateService: HelperDateService,
+        private readonly clockUtil: ClockUtil
     ) {}
 
     async hello(): Promise<IResponseReturn<HelloResponseDto>> {
